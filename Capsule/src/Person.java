@@ -1,13 +1,21 @@
 
 public class Person {
-private String name = null;
-private int age = 0;
+	private String name = null;
+	private int age = 0;
 
-public String getName(){
-	return this.name;
+	public Person(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
+
+
+
+	public String getName(){
+			return this.name;
+	}
+
+	public void setName(String name){
+		this.name = name;
+	}
 }
 
-public void setName(String name){
-	this.name = name;
-}
-}

@@ -9,7 +9,7 @@ public class Capsule {
 
 		taro.setName("鈴木太郎");
 
-		System.out.println(taro.getName());
+
 
 //		System.out.println(taro.age);
 
