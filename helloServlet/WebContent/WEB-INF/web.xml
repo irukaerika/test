@@ -6,10 +6,36 @@
   </welcome-file-list>
   <servlet>
     <servlet-name>Hello</servlet-name>
-    <servlet-class>Hello</servlet-class>
+    <servlet-class>HelloServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Hello</servlet-name>
     <url-pattern>/HelloServlet/HelloServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>Welcome</servlet-name>
+    <servlet-class>WelcomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Welcome</servlet-name>
+    <url-pattern>/HelloServlet/WelcomeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Inquiry</servlet-name>
+    <servlet-class>Inquiry</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Inquiry</servlet-name>
+    <url-pattern>/HelloServlet/InquiryServlet</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>TestServer</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/HelloServlet/TestServlet</url-pattern>
+  </servlet-mapping>
+
 </web-app>
