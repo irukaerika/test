@@ -25,7 +25,7 @@ table th:first-child{
 table th:last-child{
 	border-radius:0 5px 0 0;
 	border-right:1px solid #258;
-	box-shadow: 2px 2px 1px rgba(0,0,0,0.1),opx 1px 1px rgba(255,255,255,0.3) inset;
+	box-shadow: 2px 2px 1px rgba(0,0,0,0.1),0px 1px 1px rgba(255,255,255,0.3) inset;
 }
 table tr td {
 	padding: 8px 15px;
@@ -55,26 +55,4 @@ table tr:last-child td:last-child{
 table tr:hover{
 	background:#bbd4ee;
 	cursor:pointer;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
