@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="s" uri="/struts-tags" %>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>問い合わせ　受付完了</title>
+</head>
+<body>
+
+<br>
+<s:property value="name" />さん、お問い合わせありがとうございました。
+<br>
+<br>お問い合わせの種類：<br>
+<s:if test='qtype=="product"'>
+製品について
+</s:if>
+
+
+
+
+
+
+</body>
+</html>

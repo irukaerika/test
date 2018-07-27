@@ -1,0 +1,46 @@
+package Com.internousdev.webproj4.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.ArrayList;
+import java.sql.List;
+
+import Com.internousdev.webproj4.dto.InquiryDTO;
+import Com.internousdev.webproj4.util.DBConnector;
+
+public class InquiryCompleteDAO {
+	java.util.List<InquiryDTO>inquiryDTOList = new ArrayList<InquiryDTO>();
+	public List<InquiryDTO>select(){
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+
+		String sql = "select * from inquiry";
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()){
+				InquiryDTO dto = new InquiryDTO();
+				dto.setName(rs.getString("name"));
+				dto.setQtype(rs.getString("Qtype"));
+				dto.setBody(rs.getString("body"));
+				inquiryDTOList.add(dto);
+			}
+
+		}catch (SQLException e){
+			e.printStackTrace();
+		}
+		try{
+			con.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return inquiryDTOList;
+	}
+	public int insert(String name,String qtype,String body){
+
+	}
+
+}
