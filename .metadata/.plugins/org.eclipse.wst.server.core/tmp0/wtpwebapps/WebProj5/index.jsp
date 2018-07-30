@@ -17,6 +17,7 @@
 <s:form action="InquiryAction">
 <s:submit value="問い合わせ"/>
 </s:form>
+
 <br>
 <h3>新規ユーザー登録</h3>
 GET通信
