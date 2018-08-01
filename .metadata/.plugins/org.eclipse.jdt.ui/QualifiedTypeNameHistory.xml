@@ -10,4 +10,5 @@
 <fullyQualifiedTypeName name="com.internousdev.webproj3.dao.LoginDAO"/>
 <fullyQualifiedTypeName name="Com.internousdev.webproj4.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 </qualifiedTypeNameHistroy>

@@ -49,3 +49,17 @@
 0:0:0:0:0:0:0:1 - - [30/Jul/2018:14:36:00 +0900] "POST /WebProj5/WelcomeAction.action HTTP/1.1" 200 841
 0:0:0:0:0:0:0:1 - - [30/Jul/2018:14:36:12 +0900] "POST /WebProj5/LoginAction.action HTTP/1.1" 200 349
 0:0:0:0:0:0:0:1 - - [30/Jul/2018:14:36:16 +0900] "POST /WebProj5/HelloStrutsAction.action HTTP/1.1" 200 730
+127.0.0.1 - - [30/Jul/2018:14:39:10 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:14:39:11 +0900] "GET /WebProj5/ HTTP/1.1" 200 2070
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:14:39:21 +0900] "GET /WebProj5/TestAction.action?username=taro&password=123 HTTP/1.1" 200 441
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:14:39:37 +0900] "POST /WebProj5/HelloStrutsAction.action HTTP/1.1" 200 826
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:14:40:22 +0900] "POST /WebProj5/TestAction.action HTTP/1.1" 200 485
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:14:40:26 +0900] "POST /WebProj5/HelloStrutsAction.action HTTP/1.1" 200 922
+127.0.0.1 - - [30/Jul/2018:17:07:13 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:17:07:15 +0900] "GET /template/home.jsp HTTP/1.1" 200 1626
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:17:07:18 +0900] "POST /template/HomeAction;jsessionid=28D0858FA23715554C2E7F2ADAFC189B HTTP/1.1" 200 3437
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:17:07:43 +0900] "GET /template/ HTTP/1.1" 200 3417
+127.0.0.1 - - [30/Jul/2018:17:43:22 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:17:43:24 +0900] "GET /template/login.jsp HTTP/1.1" 200 1912
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:17:43:31 +0900] "POST /template/LoginAction HTTP/1.1" 200 3439
+0:0:0:0:0:0:0:1 - - [30/Jul/2018:17:43:34 +0900] "GET /template/UserCreateAction.action HTTP/1.1" 200 3449
