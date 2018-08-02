@@ -51,7 +51,7 @@ height:500px;
 text-align:center;
 }
 
-#fotter{
+#footer{
 width:100%;
 height:80px;
 background-color:black;
@@ -62,8 +62,6 @@ clear:both;
 <body>
 
 <div id="header">
-<div id="pr">
-</div>
 </div>
 <div id="main">
 <div id="top">
@@ -76,8 +74,7 @@ clear:both;
 </div>
 </div>
 <div id="footer">
-<div id="pr">
-</div>
+
 </div>
 
 

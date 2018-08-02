@@ -22,4 +22,6 @@
 			<item value="org.eclipse.datatools.sql"/>
 		</list>
 	</section>
+	<section name="ImportExportAction">
+	</section>
 </section>

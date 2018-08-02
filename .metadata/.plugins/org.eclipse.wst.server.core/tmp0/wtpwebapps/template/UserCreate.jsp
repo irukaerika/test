@@ -64,7 +64,7 @@ clear:both;
 </div>
 <div>
 <s:if test="errorMessage !=''">
-<s:property value ="errorMessage"escape="false"/>
+<s:property value ="errorMessage" escape="false"/>
 </s:if>
 <table>
 <s:form action="UserCreateConfirmAction">

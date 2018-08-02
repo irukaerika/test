@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="Com.internousdev.webproj4.dto.LoginDTO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
 </qualifiedTypeNameHistroy>
