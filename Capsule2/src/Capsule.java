@@ -5,7 +5,8 @@ public class Capsule {
 Person taro = new Person("山田太郎", 20);
 System.out.println(taro.getName());
 
-
+taro.setName("jiro");
+System.out.println(taro.getName());
 	}
 
 }

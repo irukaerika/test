@@ -1,15 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="SmartPhone"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="com.internousdev.login.dto.loginDTO"/>
-<fullyQualifiedTypeName name="com.internousdev.login.dao.LoginDAO"/>
-<fullyQualifiedTypeName name="com.internousdev.webproj2.dao.LoginDAO"/>
-<fullyQualifiedTypeName name="com.internousdev.webproj3.dao.LoginDAO"/>
-<fullyQualifiedTypeName name="Com.internousdev.webproj4.dto.LoginDTO"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>
