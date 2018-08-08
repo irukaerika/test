@@ -70,7 +70,7 @@ clear:both;
 <s:form action="UserCreateConfirmAction">
 <tr>
 <td>
-<label>ログインID</label>
+<label>ログインID:</label>
 </td>
 <td>
 <input type="text" name="loginUserId" value=""/>
