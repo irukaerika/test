@@ -20,7 +20,6 @@ public class UserCreateCompleteDAO {
 					preparedStatement.setString(4, dateUtil.getDate());
 
 					preparedStatement.execute();
-					System.out.println(userName);
 			} catch(Exception e){
 				e.printStackTrace();
 			} finally{

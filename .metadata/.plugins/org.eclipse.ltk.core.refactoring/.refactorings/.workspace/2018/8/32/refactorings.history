@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="リソース名 &apos;ecsite2&apos; を &apos;template2&apos; に変更します" description="リソース &apos;ecsite2&apos; の名前変更" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ecsite2" name="template2" stamp="1533705913594" updateReferences="true"/>
-</session>

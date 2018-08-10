@@ -24,6 +24,39 @@
 			<result name="error">login.jsp</result>
 		</action>
 
+		<!-- AdminAction -->
+		<action name="AdminAction" class="com.internousdev.ecsite.action.AdminAction" method="execute">
+			<result name="success">adminCreate.jsp</result>
+		</action>
+
+		<!--"AdminLoginAction -->
+		<action name="AdminLoginAction" class="com.internousdev.ecsite.action.AdminLoginAction" method="execute">
+			<result name="success">updateItem.jsp</result>
+		</action>
+
+
+		<!-- AdminCreateConfirmAction -->
+		<action name="AdminCreateConfirmAction" class="com.internousdev.ecsite.action.AdminCreateConfirmAction" method="execute">
+			<result name="success">adminCreateConfirm.jsp</result>
+		</action>
+
+		<!-- AdminCreateCompleteAction -->
+		<action name="AdminCreateCompleteAction" class="com.internousdev.ecsite.action.AdminCreateCompleteAction" method="execute">
+			<result name="success">adminLogin.jsp</result>
+		</action>
+
+		<!-- UpdateItemConfirmAction -->
+		<action name="UpdateItemConfirmAction" class="com.internousdev.ecsite.action.UpdateItemConfirmAction" method="execute">
+			<result name="success">updateItemConfirm.jsp</result>
+		</action>
+
+			<!-- UpdateItemCompleteAction -->
+		<action name="UpdateItemCompleteAction"
+class="com.internousdev.ecsite.action.UpdateItemCompleteAction" method="execute">
+			<result name="success">updateItemComplete.jsp</result>
+		</action>
+
+
 		<!-- UserCreateAction -->
 		<action name="UserCreateAction" class="com.internousdev.ecsite.action.UserCreateAction" method="execute">
 			<result name="success">userCreate.jsp</result>

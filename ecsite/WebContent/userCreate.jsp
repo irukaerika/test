@@ -63,6 +63,7 @@
 		<div>
 			<s:if test="errorMassage != ''">
 					<s:property value="errorMassage" escape="false" />
+
 			</s:if>
 			<table>
 			<s:form action="UserCreateConfirmAction">
