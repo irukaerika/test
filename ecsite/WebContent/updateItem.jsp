@@ -66,7 +66,7 @@
 
 			</s:if>
 			<table>
-			<s:form action="UpdateItemConfirmAction">
+			<s:form action="UpdateItemCompleteAction">
 		<tr>
 			<td>
 				<label>商品名:</label>
