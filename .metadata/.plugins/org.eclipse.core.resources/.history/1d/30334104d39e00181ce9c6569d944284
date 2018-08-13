@@ -1,0 +1,8 @@
+package com.internousdev.ecsite2.action;
+
+public class AddItemListAction {
+	public String execute(){
+		return SUCCESS;
+	}
+
+}
