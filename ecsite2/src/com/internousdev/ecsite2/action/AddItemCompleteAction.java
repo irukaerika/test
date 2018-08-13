@@ -16,12 +16,12 @@ public class AddItemCompleteAction extends ActionSupport implements SessionAware
 		public Map<String, Object> session;
 		private AddItemCompleteDAO addItemCompleteDAO = new AddItemCompleteDAO();
 
-		int intItemPrice = Integer.parseInt(session.get("itemPrice").toString());
-		int intItemStock = Integer.parseInt(session.get("itemStock").toString());
 		public String execute() throws SQLException{
-			addItemCompleteDAO.addItem(session.get("itemName").toString(),
+			addItemCompleteDAO.addItemInfo(
+							session.get("itemName").toString(),
 							session.get("itemPrice").toString(),
 							session.get("itemStock").toString());
+
 			String result = SUCCESS;
 			 return result;
 		 }

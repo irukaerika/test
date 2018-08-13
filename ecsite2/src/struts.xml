@@ -18,10 +18,9 @@
 		class="com.internousdev.ecsite2.action.AddItemConfirmAction" method="execute">
 			<result name="success">addItemConfirm.jsp</result>
 			<result name="error">addItem.jsp</result>
-
 		</action>
 
-		 <!-- AddItemConpleteAction -->
+		 <!-- AddItemCompleteAction -->
 		<action name="AddItemCompleteAction"
 		class="com.internousdev.ecsite2.action.AddItemCompleteAction" method="execute">
 			<result name="success">addItemComplete.jsp</result>

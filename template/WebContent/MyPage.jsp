@@ -37,7 +37,7 @@ border:1px solid #333;
 }
 #header{
 width:100%;
-hegiht:80px;
+height:80px;
 background-color:black;
 }
 #main{

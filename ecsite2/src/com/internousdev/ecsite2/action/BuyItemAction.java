@@ -1,8 +1,10 @@
 package com.internousdev.ecsite2.action;
 
-import com.opensymphony.xwork2.ActionSupport;
-import org.apache.struts2.interceptor.SessionAware;
 import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemAction extends ActionSupport implements SessionAware{
 				public Map<String, Object> session;
