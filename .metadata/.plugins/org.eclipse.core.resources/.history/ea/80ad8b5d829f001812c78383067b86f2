@@ -1,0 +1,44 @@
+package com.internousdev.ecsite2.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.internousdev.ecsite2.dto.AddItemListDTO;
+import com.internousdev.ecsite2.util.DBConnector;
+
+public class AddItemListDAO {
+		private DBConnector dbConnector = new DBConnector();
+		private Connection connection = dbConnector.getConnection();
+
+		public ArrayList<AddItemListDTO>getAllItemListInfo
+		(String item_name, int item_price, int item_stock )throws SQLException {
+			ArrayList<AddItemListDTO>addItemListDTO = new ArrayList<AddItemListDTO>();
+			String sql = "SELECT * FROM item_info_transaction WHERE "
+					+ "item_name = ?, item_price = ? AND item_stock = ?";
+					try{
+						PreparedStatement preparedStatement = connection.prepareStatement(sql);
+						preparedStatement.setString(1, item_name);
+						preparedStatement.setInt(2, item_price);
+						preparedStatement.setInt(3, item_stock);
+						ResultSet resultSet = preparedStatement.executeQuery();
+
+						while(resultSet.next()){
+							AddItemListDTO dto = new AddItemListDTO();
+							dto.setItemName(resultSet.getString("item_name"));
+							dto.setItemPrice(resultSet.getString("item_price"));
+							dto.setItemStock(resultSet.getString("item_stock"));
+							addItemListDTO.add(dto);
+						}
+								} catch(Exception e){
+									e.printStackTrace();
+								}finally{
+									connection.close();
+								}
+								return addItemListDTO;
+							}
+}
+
+

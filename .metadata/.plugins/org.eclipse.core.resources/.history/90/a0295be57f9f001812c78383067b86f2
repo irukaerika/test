@@ -1,0 +1,41 @@
+package com.internousdev.ecsite2.action;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite2.dao.AddItemListDAO;
+import com.internousdev.ecsite2.dto.AddItemListDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class AddItemListAction extends ActionSupport implements SessionAware{
+	public Map<String, Object> session;
+	private AddItemListDAO addItemListDAO = new AddItemListDAO();
+	private ArrayList<AddItemListDTO> addItemListDTO = new ArrayList<AddItemListDTO>();
+
+	public String execute() throws SQLException{
+		
+		addItemListDTO = addItemListDAO.AllItemListInfo(String item_name, int item_price, int item_stock );
+		public ArrayList<AddItemListDTO>getAllItemListInfo
+		(String item_name, int item_price, int item_stock )throws SQLException{
+			session.set("item_name", item_name);
+			session.set("item_price", item_price);
+			session.set("item_stock", item_stock);
+			
+	
+			public String getItemSt(){
+				return itemStock;
+			}
+			public void setItemStock(String itemStock){
+				this.itemStock = itemStock;
+			}
+		@Override
+			public void setSession(Map<String, Object> session) {
+				this.session = session;
+			}
+			public ArrayList<AddItemListDTO> getAddItemListDTO(String addItemListDTO) {
+				return addItemListDTO;
+			}
+			}

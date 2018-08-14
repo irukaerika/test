@@ -15,11 +15,8 @@ public class AddItemConfirmAction extends ActionSupport implements SessionAware{
 
 		public String execute(){
 			String result = SUCCESS;
-				session.put("itemPrice",itemPrice);
-				int intItemPrice = Integer.parseInt(session.get("itemPrice").toString());
-				session.put("itemStock",itemStock);
-				int intItemStock = Integer.parseInt(session.get("itemStock").toString());
-				session.put("total_price",intItemPrice * intItemStock);
+
+
 			if(!(itemName.equals(""))
 					&&!(itemPrice.equals(""))
 					&&!(itemStock.equals(""))){

@@ -19,8 +19,9 @@ public class AddItemCompleteAction extends ActionSupport implements SessionAware
 		public String execute() throws SQLException{
 			addItemCompleteDAO.addItemInfo(
 							session.get("itemName").toString(),
-							session.get("itemPrice").toString(),
-							session.get("itemStock").toString());
+							Integer.parseInt(session.get("itemPrice").toString()),
+							 Integer.parseInt(session.get("itemStock").toString()));
+
 
 			String result = SUCCESS;
 			 return result;

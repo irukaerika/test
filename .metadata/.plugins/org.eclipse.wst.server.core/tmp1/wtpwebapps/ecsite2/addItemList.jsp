@@ -68,30 +68,26 @@
 				<p>商品一覧</p>
 			</div>
 			<div>
-				<s:if test="myPageList == null">
-					<h3>ご購入情報はありません。</h3>
+				<s:if test="popo == null">
+					<h3>商品一覧はありません。</h3>
 				</s:if>
 				<s:elseif test="message == null">
-					<h3>ご購入情報は以下になります。</h3>
+					<h3>商品一覧は以下の通り</h3>
 					<table border="1">
 					<tr>
 						<th>商品名</th>
 						<th>値段</th>
-						<th>購入個数</th>
-						<th>支払い方法</th>
-						<th>購入日</th>
+						<th>在庫個数</th>
 					</tr>
-					<s:iterator value="myPageList">
+					<s:iterator value="popo">
 						<tr>
 							<td><s:property value="itemName"/></td>
-							<td><s:property value="totalPrice"/><span>円</span></td>
-							<td><s:property value="totalCount"/><span>個</span></td>
-							<td><s:property value="payment"/></td>
-							<td><s:property value="insert_date"/></td>
+							<td><s:property value="itemPrice"/><span>円</span></td>
+							<td><s:property value="itemStock"/><span>個</span></td>
 						</tr>
 					</s:iterator>
 					</table>
-					<s:form action="MyPageAction">
+					<s:form action="AddItemListAction">
 						<input type="hidden" name="deleteFlg" value="1">
 						<s:submit value="削除" method="delete"/>
 					</s:form>
