@@ -28,14 +28,14 @@ public class AddItemListDAO {
 							dto.setItemPrice(resultSet.getString("item_price"));
 							dto.setItemStock(resultSet.getString("item_stock"));
 							addItemListDTO.add(dto);
-						}
-								} catch(Exception e){
-									e.printStackTrace();
-								}finally{
-									connection.close();
-								}
-								return addItemListDTO;
 							}
+					} catch(Exception e){
+						e.printStackTrace();
+					}finally{
+						connection.close();
+					}
+			return addItemListDTO;
+		}
 
 		public int itemHistoryDelete()throws SQLException{
 

@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class GoAddItemAction extends ActionSupport{
 	public String execute(){
-	return SUCCESS;
+		return SUCCESS;
 	}
+
 }

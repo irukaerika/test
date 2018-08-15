@@ -16,12 +16,17 @@ public class UserListAction extends ActionSupport implements SessionAware{
 	private ArrayList<UserListDTO> userList = new ArrayList<UserListDTO>();
 	private String deleteFlg;
 	private String message;
+	private String noUserMessage;
+
 
 	public String execute() throws SQLException{
 
 			if(deleteFlg == null){
 
 				userList = userListDAO.getUserListInfo();
+				if(userList.isEmpty()){
+					setNoUserMessage("ユーザー情報がありません。");
+				}
 
 			} else if(deleteFlg.equals("1")){
 						delete();
@@ -44,10 +49,15 @@ public class UserListAction extends ActionSupport implements SessionAware{
 
 				public void setDeleteFlg(String deleteFlg) {
 					this.deleteFlg = deleteFlg;
-
 					}
 				public String getDeleteFlg(){
 					return deleteFlg;
+				}
+				public String getNoUserMessage() {
+					return noUserMessage;
+				}
+				public void setNoUserMessage(String noUserMessage) {
+					this.noUserMessage = noUserMessage;
 				}
 				public String getMessage(){
 					return message;
@@ -59,7 +69,20 @@ public class UserListAction extends ActionSupport implements SessionAware{
 			public void setSession(Map<String, Object> session) {
 				this.session = session;
 			}
-			public ArrayList<UserListDTO> getUserListDTO() {
+			public Map<String, Object> getSession() {
+				return session;
+			}
+			public ArrayList<UserListDTO> getUserList() {
 				return userList;
 			}
+
+			public void setUserList(ArrayList<UserListDTO> userList) {
+				this.userList = userList;
 			}
+			public UserListDAO getUserListDAO() {
+				return userListDAO;
+			}
+			public void setUserListDAO(UserListDAO userListDAO) {
+				this.userListDAO = userListDAO;
+			}
+	}
