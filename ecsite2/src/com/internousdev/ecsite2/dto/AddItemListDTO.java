@@ -1,10 +1,11 @@
 package com.internousdev.ecsite2.dto;
 
 public class AddItemListDTO {
+	public String id;
 	public String itemName;
 	public String itemPrice;
 	public String itemStock;
-	public String id;
+
 
 	public String getId(){
 		return id;

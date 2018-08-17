@@ -1,6 +1,8 @@
 package com.internousdev.ecsite2.action;
 import java.util.Map;
+
 import org.apache.struts2.interceptor.SessionAware;
+
 import com.internousdev.ecsite2.dao.BuyItemDAO;
 import com.internousdev.ecsite2.dao.LoginDAO;
 import com.internousdev.ecsite2.dto.BuyItemDTO;
@@ -9,6 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware{
 		private String loginId;
 		private String loginPassword;
+		private String flgNum;
 		private Map<String,Object>session;
 		private LoginDAO loginDAO = new LoginDAO();
 		private LoginDTO loginDTO = new LoginDTO();
@@ -19,10 +22,13 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			loginDTO = loginDAO.getLoginUserInfo(loginId,loginPassword);
 			session.put("loginUser",loginDTO);
 
-			if(((LoginDTO)session.get("loginUser")).getLoginFlg()){
-				result = SUCCESS;
-				BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
+				if(((LoginDTO)session.get("loginUser")).getLoginFlg() &&
+					((LoginDTO)session.get("loginUser")).getAdminFlg()){
+					result = SUCCESS;
+				} else if(((LoginDTO)session.get("loginUser")).getLoginFlg()){
+						result = "login";
 
+				BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 				session.put("login_id",loginDTO.getLoginId());
 				session.put("id", buyItemDTO.getId());
 				session.put("buyItem_name", buyItemDTO.getItemName());
@@ -31,6 +37,12 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				return result;
 			}
 			return result;
+		}
+		public String getFlgNum() {
+			return flgNum;
+		}
+		public void setFlgNum(String flgNum) {
+			this.flgNum = flgNum;
 		}
 		public String getLoginId(){
 			return loginId;

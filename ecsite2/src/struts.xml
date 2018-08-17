@@ -7,10 +7,10 @@
 	<constant name="struts.devMode" value="true"/>
 	<package name="com.internousdev.ecsite2.action" extends="struts-default">
 
-		<!-- AdminAction -->
-		<action name="AdminAction"
-		class="com.internousdev.ecsite2.action.AdminAction" method="execute">
-			<result name="success">admin.jsp</result>
+		<!-- ItemDetailsAction -->
+		<action name="ItemDetailsAction"
+		class="com.internousdev.ecsite2.action.ItemDetailsAction" method="execute">
+			<result name="success">itemDetails.jsp</result>
 		</action>
 
 		<!-- GoAddItemAction -->
@@ -58,7 +58,8 @@
 
 		<!-- LoginAction -->
 		<action name="LoginAction" class="com.internousdev.ecsite2.action.LoginAction" method="execute">
-			<result name="success">buyItem.jsp</result>
+			<result name="success">admin.jsp</result>
+			<result name="login">buyItem.jsp</result>
 			<result name="error">login.jsp</result>
 		</action>
 

@@ -39,8 +39,8 @@
 
 		#header{
 			width:100%;
-			margin:80px;
-			border:black;
+			height:80px;
+			background-color:black;
 			}
 
 		#main{
@@ -78,12 +78,15 @@
 						<th>商品名</th>
 						<th>値段</th>
 						<th>在庫個数</th>
+						<th>商品詳細</th>
 					</tr>
 					<s:iterator value="popo">
 						<tr>
 							<td><s:property value="itemName"/></td>
 							<td><s:property value="itemPrice"/><span>円</span></td>
 							<td><s:property value="itemStock"/><span>個</span></td>
+							<td><a href='<s:url action="ItemDetailsAction">
+							<s:param name="itemId" value="%{id}"/></s:url>'>詳細</a></td>
 						</tr>
 					</s:iterator>
 					</table>

@@ -3,6 +3,7 @@ package com.internousdev.ecsite2.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 import com.internousdev.ecsite2.dto.LoginDTO;
 import com.internousdev.ecsite2.util.DBConnector;
 
@@ -26,10 +27,22 @@ public class LoginDAO {
 					loginDTO.setLoginId(resultSet.getString("login_id"));
 					loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 					loginDTO.setUserName(resultSet.getString("user_name"));
+					loginDTO.setFlgNum(resultSet.getString("flg_num"));
+
+					System.out.println(loginDTO.getLoginId());
+					System.out.println(loginDTO.getLoginPassword());
+					System.out.println(loginDTO.getUserName());
+					System.out.println(loginDTO.getLoginFlg());
 
 					if(!(resultSet.getString("login_id").equals(null))){
 						loginDTO.setLoginFlg(true);
+							if(resultSet.getString("flg_num").equals("0")){
+								loginDTO.setAdminFlg(true);
+						}
+
 					}
+				}else{
+					System.out.println("情報がありません");
 				}
 			}catch (Exception e){
 				e.printStackTrace();
