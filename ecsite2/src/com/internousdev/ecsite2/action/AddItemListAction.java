@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class AddItemListAction extends ActionSupport implements SessionAware{
 	public Map<String, Object> session;
 	private AddItemListDAO addItemListDAO = new AddItemListDAO();
-	private ArrayList<AddItemListDTO> popo = new ArrayList<AddItemListDTO>();
+	private ArrayList<AddItemListDTO> addItemListDTO = new ArrayList<AddItemListDTO>();
 	private String deleteFlg;
 	private String message;
 	private String noAddItemMessage;
@@ -29,8 +29,8 @@ public class AddItemListAction extends ActionSupport implements SessionAware{
 
 			if(deleteFlg == null){
 
-				popo = addItemListDAO.getAllItemListInfo();
-				 if(popo.isEmpty()){
+				addItemListDTO = addItemListDAO.getAllItemListInfo();
+				 if(addItemListDTO.isEmpty()){
 						setNoAddItemMessage("商品一覧がありません。");
 					}
 
@@ -45,47 +45,43 @@ public class AddItemListAction extends ActionSupport implements SessionAware{
 		int res = addItemListDAO.itemHistoryDelete();
 
 		if(res > 0){
-			popo = null;
+			addItemListDTO = null;
 			setMessage("商品情報を正しく削除しました。");
 		} else if(res == 0){
 			setMessage("商品情報の削除に失敗しました。");
 		}
 
 	}
-
+	public Map<String, Object> getSession() {
+		return session;
+	}
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+	public AddItemListDAO getAddItemListDAO() {
+		return addItemListDAO;
+	}
+	public void setAddItemListDAO(AddItemListDAO addItemListDAO) {
+		this.addItemListDAO = addItemListDAO;
+	}
+	public ArrayList<AddItemListDTO> getAddItemListDTO() {
+		return addItemListDTO;
+	}
+	public void setAddItemListDTO(ArrayList<AddItemListDTO> addItemListDTO) {
+		this.addItemListDTO = addItemListDTO;
+	}
+	public String getDeleteFlg() {
+		return deleteFlg;
+	}
 	public void setDeleteFlg(String deleteFlg) {
 		this.deleteFlg = deleteFlg;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
-		}
-
-
-		public String getDeleteFlg(){
-			return deleteFlg;
-		}
-		public String getMessage(){
-			return message;
-		}
-		public void setMessage(String message){
-			this.message = message;
-		}
-		@Override
-			public void setSession(Map<String, Object> session) {
-				this.session = session;
-			}
-		public AddItemListDAO getAddItemListDAO() {
-			return addItemListDAO;
-		}
-		public void setAddItemListDAO(AddItemListDAO addItemListDAO) {
-			this.addItemListDAO = addItemListDAO;
-		}
-		public ArrayList<AddItemListDTO> getPopo() {
-			return popo;
-		}
-		public void setPopo(ArrayList<AddItemListDTO> popo) {
-			this.popo = popo;
-		}
-		public Map<String, Object> getSession() {
-			return session;
-		}
 
 			}

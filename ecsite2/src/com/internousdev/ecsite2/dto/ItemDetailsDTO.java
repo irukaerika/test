@@ -1,17 +1,17 @@
 package com.internousdev.ecsite2.dto;
 
 public class ItemDetailsDTO {
-	private String itemId;
+	private String id;
 	private String itemName;
 	private String itemPrice;
 	private String itemStock;
 
 
-	public String getItemId() {
-		return itemId;
+	public String getId() {
+		return id;
 	}
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+	public void setItemId(String id) {
+		this.id = id;
 	}
 	public String getItemName(){
 		return itemName;

@@ -12,22 +12,21 @@ public class ItemDetailsDAO {
 		private DBConnector dbConnector = new DBConnector();
 		public Connection connection = dbConnector.getConnection();
 
-		public ItemDetailsDTO getItemDetailsInfo(String itemId) {
-			DBConnector dbconnector = new DBConnector();
+		public ItemDetailsDTO getItemDetailsInfo(String id) {
+			DBConnector dbConnector = new DBConnector();
 			Connection connection = dbConnector.getConnection();
 			ItemDetailsDTO itemDetailsDTO = new ItemDetailsDTO();
 
 			String sql = "select * from item_info_transaction where id=?";
 					try{
 						PreparedStatement preparedStatement = connection.prepareStatement(sql);
-						preparedStatement.setString(1, itemId);
+						preparedStatement.setString(1, id);
 						ResultSet resultSet = preparedStatement.executeQuery();
 						while(resultSet.next()){
 							itemDetailsDTO.setItemId(resultSet.getString("id"));
-							itemDetailsDTO.setItemName(resultSet.getString("itemId"));
-							itemDetailsDTO.setItemId(resultSet.getString("itemId"));
-							itemDetailsDTO.setItemId(resultSet.getString("itemId"));
-
+							itemDetailsDTO.setItemName(resultSet.getString("item_name"));
+							itemDetailsDTO.setItemPrice(resultSet.getString("item_price"));
+							itemDetailsDTO.setItemStock(resultSet.getString("item_stock"));
 						}
 					} catch (SQLException e) {
 						e.printStackTrace();

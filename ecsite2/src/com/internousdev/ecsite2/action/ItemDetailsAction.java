@@ -10,7 +10,7 @@ import com.internousdev.ecsite2.dto.ItemDetailsDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemDetailsAction extends ActionSupport implements SessionAware{
-	private String itemId;
+	private String id;
 	private String itemName;
 	private String itemPrice;
 	private String itemStock;
@@ -22,9 +22,9 @@ public class ItemDetailsAction extends ActionSupport implements SessionAware{
 		String result = ERROR;
 		ItemDetailsDAO itemDetailsDAO = new ItemDetailsDAO();
 		ItemDetailsDTO itemDetailsDTO = new ItemDetailsDTO();
-		itemDetailsDTO = itemDetailsDAO.getItemDetailsInfo(itemId);
+		itemDetailsDTO = itemDetailsDAO.getItemDetailsInfo(id);
 
-		session.put("itemId", itemDetailsDTO.getItemId());
+		session.put("id", itemDetailsDTO.getId());
 		session.put("itemName", itemDetailsDTO.getItemName());
 		session.put("itemPrice", itemDetailsDTO.getItemPrice());
 		session.put("itemStock", itemDetailsDTO.getItemStock());
@@ -32,11 +32,11 @@ public class ItemDetailsAction extends ActionSupport implements SessionAware{
 			result = SUCCESS;
 		return result;
 	}
-	public String getItemId() {
-		return itemId;
+	public String getId() {
+		return id;
 	}
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getItemName() {
 		return itemName;

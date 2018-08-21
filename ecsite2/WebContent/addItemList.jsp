@@ -78,15 +78,19 @@
 						<th>商品名</th>
 						<th>値段</th>
 						<th>在庫個数</th>
+						<th>ID</th>
 						<th>商品詳細</th>
 					</tr>
-					<s:iterator value="popo">
+					<s:iterator value="addItemListDTO">
 						<tr>
 							<td><s:property value="itemName"/></td>
 							<td><s:property value="itemPrice"/><span>円</span></td>
 							<td><s:property value="itemStock"/><span>個</span></td>
+
+							<td><s:property value="id"/></td>
+
 							<td><a href='<s:url action="ItemDetailsAction">
-							<s:param name="itemId" value="%{id}"/></s:url>'>詳細</a></td>
+							<s:param name="id" value="%{id}"/></s:url>'>詳細</a></td>
 						</tr>
 					</s:iterator>
 					</table>
@@ -96,7 +100,7 @@
 				<td>
 					<s:form action="AddItemListAction">
 						<input type="hidden" name="deleteFlg" value="1">
-						<s:submit value="削除" method="delete"/>
+						<s:submit value="全件削除" method="delete"/>
 					</s:form>
 				</td>
 

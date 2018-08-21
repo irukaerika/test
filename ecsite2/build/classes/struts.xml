@@ -7,6 +7,12 @@
 	<constant name="struts.devMode" value="true"/>
 	<package name="com.internousdev.ecsite2.action" extends="struts-default">
 
+		<!-- UserDetailsAction -->
+		<action name="UserDetailsAction"
+		class="com.internousdev.ecsite2.action.UserDetailsAction" method="execute">
+			<result name="success">userDetails.jsp</result>
+		</action>
+
 		<!-- ItemDetailsAction -->
 		<action name="ItemDetailsAction"
 		class="com.internousdev.ecsite2.action.ItemDetailsAction" method="execute">

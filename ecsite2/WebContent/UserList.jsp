@@ -79,18 +79,22 @@
 						<th>ユーザーID</th>
 						<th>パスワード</th>
 						<th>名前</th>
+						<th>詳細</th>
 					</tr>
 					<s:iterator value="userList">
 						<tr>
-							<td><s:property value="userID"/></td>
+							<td><s:property value="userId"/></td>
 							<td><s:property value="password"/></td>
 							<td><s:property value="userName"/></td>
+							<td><a href='<s:url action="UserDetailsAction">
+							<s:param name="id" value="%{id}"/></s:url>'>詳細</a></td>
+
 						</tr>
 					</s:iterator>
 					</table>
 					<s:form action="UserListAction">
 						<input type="hidden" name="deleteFlg" value="1">
-						<s:submit value="削除" method="delete"/>
+						<s:submit value="全件削除" method="delete"/>
 					</s:form>
 				</s:elseif>
 
