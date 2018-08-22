@@ -38,6 +38,27 @@ public class UserDetailsDAO {
 					}
 					return userDetailsDTO;
 				}
-}
 
+
+		public int userDetailsDelete(String userId)throws SQLException{
+
+			String sql = "delete from login_user_transaction where login_id=?";
+
+
+			PreparedStatement preparedStatement;
+
+			int result = 0;
+		try{
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, userId);
+			result = preparedStatement.executeUpdate();
+		} catch(SQLException e){
+			e.printStackTrace();
+		} finally{
+			connection.close();
+		}
+		return result;
+		}
+
+	}
 

@@ -64,43 +64,56 @@
 		</div>
 		<div id="main">
 			<div id="top">
-				<p>商品詳細</p>
+				<h1>商品詳細</h1>
 			</div>
 			<div>
-			<s:form action="UserDetailsAction" >
-			<s:param name="id" value="%{id}"/>
-					<table border="1">
-					<tr>
-						<th>ユーザーID</th>
-						<td><s:property value="#session.userId"/></td>
-					</tr>
-					<tr>
-						<th>パスワード</th>
-						<td><s:property value="#session.password"/></td>
-					</tr>
-					<tr>
-						<th>名前</th>
-						<td><s:property value="#session.userName"/></td>
-					</tr>
-					</table>
-			</s:form>
+				<s:if test="errorMessage != null">
+					<h3><s:property value="errorMessage"/></h3>
+				</s:if>
+					<s:elseif test="message == null">
+
+
+						<s:form action="UserDetailsAction" >
+							<s:param name="id" value="%{id}"/>
+							<table border="1">
+								<tr>
+									<th>ユーザーID</th>
+									<td><s:property value="#session.userId"/></td>
+								</tr>
+								<tr>
+									<th>パスワード</th>
+									<td><s:property value="#session.password"/></td>
+								</tr>
+								<tr>
+									<th>名前</th>
+									<td><s:property value="#session.userName"/></td>
+								</tr>
+							</table>
+						</s:form>
+					</s:elseif>
+
+					<s:elseif test="message != null">
+					<h3><s:property value="message"/></h3>
+					</s:elseif>
 
 		<table>
 			<tr>
 				<td>
-					<s:form action="DeleteItemAction">
-						<input type="hidden" name="deleteFlgPart" value="2">
-						<s:submit value="削除" method="delete"/>
+					<s:form action="DeleteUserDetailsAction">
+							<input type="hidden" name="deleteFlg" value="1">
+								<s:submit value="削除" method="delete"/>
 					</s:form>
+
 				</td>
 
 
 			</tr>
 		</table>
 
-				<s:if test="message != null">
+
+				<s:elseif test="message != null">
 						<h3><s:property value="message"/></h3>
-				</s:if>
+				</s:elseif>
 				<div id="text-right">
 					<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 					<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>

@@ -13,6 +13,12 @@
 			<result name="success">userDetails.jsp</result>
 		</action>
 
+		<!--DeleteUserDetailsAction -->
+		<action name="DeleteUserDetailsAction"
+		class="com.internousdev.ecsite2.action.DeleteUserDetailsAction" method="execute">
+			<result name="success">userDetails.jsp</result>
+		</action>
+
 		<!-- ItemDetailsAction -->
 		<action name="ItemDetailsAction"
 		class="com.internousdev.ecsite2.action.ItemDetailsAction" method="execute">

@@ -94,7 +94,6 @@
 						</tr>
 					</s:iterator>
 					</table>
-				</s:elseif>
 		<table>
 			<tr>
 				<td>
@@ -111,6 +110,7 @@
 				</td>
 			</tr>
 		</table>
+				</s:elseif>
 
 				<s:if test="message != null">
 						<h3><s:property value="message"/></h3>
