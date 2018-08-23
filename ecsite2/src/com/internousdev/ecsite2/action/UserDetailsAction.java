@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserDetailsAction extends ActionSupport implements SessionAware{
 	private String id;
-	private String userId;
+	private String loginId;
 	private String password;
 	private String userName;
 	UserDetailsDAO userDetailsDAO = new UserDetailsDAO();
@@ -25,7 +25,7 @@ public class UserDetailsAction extends ActionSupport implements SessionAware{
 		userDetailsDTO = userDetailsDAO.getItemDetailsInfo(id);
 
 		session.put("id", userDetailsDTO.getId());
-		session.put("userId", userDetailsDTO.getUserId());
+		session.put("loginId", userDetailsDTO.getLoginId());
 		session.put("password", userDetailsDTO.getPassword());
 		session.put("userName", userDetailsDTO.getUserName());
 
@@ -38,11 +38,11 @@ public class UserDetailsAction extends ActionSupport implements SessionAware{
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getUserId() {
-		return userId;
+	public String getLoginId() {
+		return loginId;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
 	}
 	public String getPassword() {
 		return password;

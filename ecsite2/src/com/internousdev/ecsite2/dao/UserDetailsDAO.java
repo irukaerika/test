@@ -24,7 +24,7 @@ public class UserDetailsDAO {
 						ResultSet resultSet = preparedStatement.executeQuery();
 						while(resultSet.next()){
 							userDetailsDTO.setId(resultSet.getString("id"));
-							userDetailsDTO.setUserId(resultSet.getString("login_id"));
+							userDetailsDTO.setLoginId(resultSet.getString("login_id"));
 							userDetailsDTO.setPassword(resultSet.getString("login_pass"));
 							userDetailsDTO.setUserName(resultSet.getString("user_name"));
 						}
@@ -40,7 +40,7 @@ public class UserDetailsDAO {
 				}
 
 
-		public int userDetailsDelete(String userId)throws SQLException{
+		public int userDetailsDelete(String loginId)throws SQLException{
 
 			String sql = "delete from login_user_transaction where login_id=?";
 
@@ -50,7 +50,7 @@ public class UserDetailsDAO {
 			int result = 0;
 		try{
 			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, userId);
+			preparedStatement.setString(1, loginId);
 			result = preparedStatement.executeUpdate();
 		} catch(SQLException e){
 			e.printStackTrace();

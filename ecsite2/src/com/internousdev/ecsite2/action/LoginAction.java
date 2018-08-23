@@ -11,7 +11,8 @@ import com.opensymphony.xwork2.ActionSupport;
 public class LoginAction extends ActionSupport implements SessionAware{
 		private String loginId;
 		private String loginPassword;
-		private String flgNum;
+		private boolean adminFlg;
+		private boolean loginFlg;
 		private Map<String,Object>session;
 		private LoginDAO loginDAO = new LoginDAO();
 		private LoginDTO loginDTO = new LoginDTO();
@@ -22,8 +23,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			loginDTO = loginDAO.getLoginUserInfo(loginId,loginPassword);
 			session.put("loginUser",loginDTO);
 
-				if(((LoginDTO)session.get("loginUser")).getLoginFlg() &&
-					((LoginDTO)session.get("loginUser")).getAdminFlg()){
+				if(((LoginDTO)session.get("loginUser")).getAdminFlg()){
 					result = SUCCESS;
 				} else if(((LoginDTO)session.get("loginUser")).getLoginFlg()){
 						result = "login";
@@ -37,12 +37,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				return result;
 			}
 			return result;
-		}
-		public String getFlgNum() {
-			return flgNum;
-		}
-		public void setFlgNum(String flgNum) {
-			this.flgNum = flgNum;
 		}
 		public String getLoginId(){
 			return loginId;
@@ -63,5 +57,17 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		public Map<String, Object> getSession() {
 			return session;
+		}
+		public boolean getAdminFlg() {
+			return adminFlg;
+		}
+		public void setAdminFlg(boolean adminFlg) {
+			this.adminFlg = adminFlg;
+		}
+		public boolean getLoginFlg() {
+			return loginFlg;
+		}
+		public void setLoginFlg(boolean loginFlg) {
+			this.loginFlg = loginFlg;
 		}
 }

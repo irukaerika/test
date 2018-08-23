@@ -32,7 +32,7 @@ public class DeleteUserDetailsAction extends ActionSupport implements SessionAwa
 	}
 			public void delete() throws SQLException{
 
-				int res = userDetailsDAO.userDetailsDelete(session.get("userId").toString());
+				int res = userDetailsDAO.userDetailsDelete(session.get("loginId").toString());
 
 				if(res > 0){
 					userDetailsDTO = null;

@@ -12,7 +12,7 @@ use ecsite;
 	login_id varchar(16) unique,
 	login_pass varchar(16),
 	user_name varchar(50),
-	flg_num varchar(16),
+	flg_num varchar(16) not null default '1',
 	insert_date datetime,
 	update_date datetime
 	);

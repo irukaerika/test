@@ -67,8 +67,9 @@
 				<p>商品詳細</p>
 			</div>
 			<div>
+			<s:if test="message == null">
 			<s:form action="ItemDetailsAction" >
-			<s:param name="itemId" value="%{itemId}"/>
+			<s:param name="id" value="%{id}"/>
 					<table border="1">
 					<tr>
 						<th>商品名</th>
@@ -89,24 +90,25 @@
 			<tr>
 				<td>
 					<s:form action="DeleteItemAction">
-						<input type="hidden" name="deleteFlgPart" value="2">
+						<input type="hidden" name="deleteFlg" value="1">
 						<s:submit value="削除" method="delete"/>
 					</s:form>
 				</td>
 
 				<td>
 					<s:form action="GoAddItemAction">
-						<s:submit value="追加" />
+						<s:submit value="更新" />
 					</s:form>
 				</td>
 			</tr>
 		</table>
+			</s:if>
 
-				<s:if test="message != null">
+				<s:elseif test="message != null">
 						<h3><s:property value="message"/></h3>
-				</s:if>
+				</s:elseif>
 				<div id="text-right">
-					<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+					<p>前画面に戻る場合は<a href='<s:url action="AddItemListAction"/>'>こちら</a></p>
 					<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 				</div>
 			</div>

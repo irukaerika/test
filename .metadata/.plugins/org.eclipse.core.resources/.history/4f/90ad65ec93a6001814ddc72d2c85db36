@@ -1,0 +1,50 @@
+package com.internousdev.ecsite2.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.internousdev.ecsite2.dto.LoginDTO;
+import com.internousdev.ecsite2.util.DBConnector;
+
+public class LoginDAO {
+		private DBConnector dbConnector = new DBConnector();
+		private Connection connection = dbConnector.getConnection();
+		private LoginDTO loginDTO = new LoginDTO();
+
+		public LoginDTO getLoginUserInfo(String loginId, String loginPassword, String flgNum){
+			String sql = "SELECT login_id, login_pass, flg_num FROM login_user_transaction";
+			try{
+				PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+				preparedStatement.setString(1, loginId);
+				preparedStatement.setString(2, loginPassword);
+				preparedStatement.setString(3, flgNum);
+
+				ResultSet resultSet = preparedStatement.executeQuery();
+
+				if(resultSet.next()){
+					loginDTO.setLoginId(resultSet.getString("login_id"));
+					loginDTO.setLoginPassword(resultSet.getString("login_pass"));
+					loginDTO.setUserName(resultSet.getString("user_name"));
+					loginDTO.setFlgNum(resultSet.getString("flg_num"));
+
+					if(!(resultSet.getString("login_id").equals(null))){
+						loginDTO.setLoginFlg(true);
+					if(resultSet.getString("flg_num").equals("0")){
+								loginDTO.setAdminFlg(true);
+				}else{
+					}
+				}
+				}
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+			return loginDTO;
+			}
+		public LoginDTO getLoginDTO(){
+			return loginDTO;
+		}
+
+
+}

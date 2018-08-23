@@ -2,7 +2,7 @@ package com.internousdev.ecsite2.dto;
 
 public class UserDetailsDTO {
 	private String id;
-	private String userId;
+	private String loginId;
 	private String password;
 	private String userName;
 
@@ -13,11 +13,11 @@ public class UserDetailsDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getUserId(){
-		return userId;
+	public String getLoginId(){
+		return loginId;
 	}
-	public void setUserId(String userId){
-		this.userId = userId;
+	public void setLoginId(String loginId){
+		this.loginId = loginId;
 	}
 	public String getPassword(){
 		return password;

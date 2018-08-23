@@ -116,7 +116,7 @@
 						<h3><s:property value="message"/></h3>
 				</s:if>
 				<div id="text-right">
-					<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+					<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 					<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 				</div>
 			</div>

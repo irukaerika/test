@@ -64,21 +64,16 @@
 		</div>
 		<div id="main">
 			<div id="top">
-				<h1>商品詳細</h1>
+				<h1>ユーザー詳細</h1>
 			</div>
 			<div>
-				<s:if test="errorMessage != null">
-					<h3><s:property value="errorMessage"/></h3>
-				</s:if>
-					<s:elseif test="message == null">
-
-
+					<s:if test="message == null">
 						<s:form action="UserDetailsAction" >
 							<s:param name="id" value="%{id}"/>
 							<table border="1">
 								<tr>
 									<th>ユーザーID</th>
-									<td><s:property value="#session.userId"/></td>
+									<td><s:property value="#session.loginId"/></td>
 								</tr>
 								<tr>
 									<th>パスワード</th>
@@ -90,32 +85,31 @@
 								</tr>
 							</table>
 						</s:form>
-					</s:elseif>
-
-					<s:elseif test="message != null">
-					<h3><s:property value="message"/></h3>
-					</s:elseif>
-
 		<table>
 			<tr>
 				<td>
 					<s:form action="DeleteUserDetailsAction">
-							<input type="hidden" name="deleteFlg" value="1">
-								<s:submit value="削除" method="delete"/>
+						<input type="hidden" name="deleteFlg" value="1">
+						<s:submit value="削除" method="delete"/>
 					</s:form>
-
 				</td>
-
-
+				<td>
+					<s:form action="UpdateUserDetailsAction">
+						<input type="hidden" name="updateFlg" value="1">
+						<s:param name="id" value="%{id}"/>
+						<s:submit value="更新" method="update"/>
+					</s:form>
+				</td>
 			</tr>
 		</table>
+					</s:if>
 
+		<s:elseif test="message != null">
+			<h3><s:property value="message"/></h3>
+		</s:elseif>
 
-				<s:elseif test="message != null">
-						<h3><s:property value="message"/></h3>
-				</s:elseif>
 				<div id="text-right">
-					<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+					<p>前画面に戻る場合は<a href='<s:url action="UserListAction"/>'>こちら</a></p>
 					<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 				</div>
 			</div>
