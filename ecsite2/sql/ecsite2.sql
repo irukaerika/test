@@ -42,5 +42,5 @@ use ecsite;
 	);
 
 INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("ノートBook",100,50);
-INSERT INTO login_user_transaction(login_id, login_pass, user_name, flg_num) VALUES("tsukazawa01","tsukazawa","tsukazawa","0");
+INSERT INTO login_user_transaction(login_id, login_pass, user_name, flg_num) VALUES("tsukazawa","tsukazawa","tsukazawa","0");
 

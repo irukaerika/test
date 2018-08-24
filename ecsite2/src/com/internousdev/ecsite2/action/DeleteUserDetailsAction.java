@@ -27,9 +27,7 @@ public class DeleteUserDetailsAction extends ActionSupport implements SessionAwa
 			result = SUCCESS;
 			return result;
 		}
-			public UserDetailsDTO getUserDetailsDTO() {
-		return userDetailsDTO;
-	}
+
 			public void delete() throws SQLException{
 
 				int res = userDetailsDAO.userDetailsDelete(session.get("loginId").toString());
@@ -68,7 +66,9 @@ public class DeleteUserDetailsAction extends ActionSupport implements SessionAwa
 			public Map<String, Object> getSession() {
 				return session;
 			}
-
+			public UserDetailsDTO getUserDetailsDTO() {
+				return userDetailsDTO;
+			}
 			public void setUserDetailsDTO(UserDetailsDTO userDetailsDTO) {
 				this.userDetailsDTO = userDetailsDTO;
 			}

@@ -79,6 +79,7 @@
 						<th>ユーザーID</th>
 						<th>パスワード</th>
 						<th>名前</th>
+						<th>権限</th>
 						<th>詳細</th>
 					</tr>
 					<s:iterator value="userList">
@@ -86,16 +87,32 @@
 							<td><s:property value="userId"/></td>
 							<td><s:property value="password"/></td>
 							<td><s:property value="userName"/></td>
+							<td>
+							<s:if test="adminFlg==true">管理者</s:if>
+							<s:else>一般ユーザー</s:else>
+							<s:hidden name="adminFlg" value="%{adminFlg}"/>
+							</td>
 							<td><a href='<s:url action="UserDetailsAction">
 							<s:param name="id" value="%{id}"/></s:url>'>詳細</a></td>
-
 						</tr>
 					</s:iterator>
 					</table>
+					<table>
+					<tr>
+					<td>
 					<s:form action="UserListAction">
 						<input type="hidden" name="deleteFlg" value="1">
 						<s:submit value="全件削除" method="delete"/>
 					</s:form>
+					</td>
+					<td>
+					<s:form action="UserCreateAction">
+						<input type="hidden" name="updateFlg" value="1">
+						<s:submit value="追加" method="update"/>
+					</s:form>
+					</td>
+					</tr>
+					</table>
 				</s:elseif>
 
 				<div id="text-right">

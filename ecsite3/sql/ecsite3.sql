@@ -12,7 +12,7 @@ use ecsite3;
 	login_id varchar(16) unique,
 	login_pass varchar(16),
 	user_name varchar(50),
-	flg_num varchar(16),
+	flg_num varchar(16) not null default '1',
 	insert_date datetime,
 	update_date datetime
 	);
@@ -41,6 +41,5 @@ use ecsite3;
 	update_date datetime
 	);
 
-INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("ノートBook",100,50);
-INSERT INTO login_user_transaction(login_id, login_pass, user_name, flg_num) VALUES("tsukazawa01","tsukazawa","tsukazawa","0");
-
+INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("筆箱", 200, 50);
+INSERT INTO login_user_transaction(login_id, login_pass, user_name, flg_num) values("tsukazawa","tsukazawa","tsukazawa","0")

@@ -2,7 +2,6 @@ INDEX VERSION 1.3+C:\Users\internousdev\Desktop\workspace\workspace-tsukazawa\te
 2612401125.index
 1111082067.index
 1655960946.index
-2624087116.index
 1549101164.index
 3525737057.index
 1270614830.index

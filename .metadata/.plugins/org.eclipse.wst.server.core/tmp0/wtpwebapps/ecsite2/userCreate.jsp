@@ -91,6 +91,14 @@
 				<input type="text" name="userName" value="" />
 			</td>
 		</tr>
+		<tr>
+			<td>
+				<label>管理者権限:</label>
+			</td>
+			<td>
+				<s:checkbox name="adminFlg" value="" />
+			</td>
+		</tr>
 		<s:submit value="登録"/>
 			</s:form>
 			</table>

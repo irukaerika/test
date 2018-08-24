@@ -7,9 +7,15 @@
 	<constant name="struts.devMode" value="true"/>
 	<package name="com.internousdev.ecsite2.action" extends="struts-default">
 
+
+		<!-- GoUpdateUserDetailsAction -->
+		<action name="GoUpdateUserDetailsAction" class="com.internousdev.ecsite2.action.GoUpdateUserDetailsAction" method="execute">
+			<result name="success">updateUser.jsp</result>
+		</action>
+
 		<!-- UpdateUserDetailsAction -->
 		<action name="UpdateUserDetailsAction" class="com.internousdev.ecsite2.action.UpdateUserDetailsAction" method="execute">
-			<result name="success">updateUserDetails.jsp</result>
+			<result name="success">updateUserComplete.jsp</result>
 		</action>
 
 		<!-- GoLoginAction -->

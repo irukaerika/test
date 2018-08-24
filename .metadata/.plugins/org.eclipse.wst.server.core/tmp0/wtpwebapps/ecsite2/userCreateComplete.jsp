@@ -63,7 +63,12 @@
 		<div>
 				<h3>ユーザーの登録が完了致しました。</h3>
 		<div>
+			<s:if test="adminFlg == false">
 				<a href='<s:url action="GoLoginAction" />'>ログインへ</a>
+			</s:if>
+			<s:elseif test="adminFlg == true">
+				<a href='<s:url action="UserListAction" />'>ユーザーリストへ</a>
+			</s:elseif>
 		</div>
 		</div>
 </div>

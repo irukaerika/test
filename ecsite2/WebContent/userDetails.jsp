@@ -73,15 +73,19 @@
 							<table border="1">
 								<tr>
 									<th>ユーザーID</th>
-									<td><s:property value="#session.loginId"/></td>
+									<td><s:property name="loginId" value="#session.loginId"/></td>
 								</tr>
 								<tr>
 									<th>パスワード</th>
-									<td><s:property value="#session.password"/></td>
+									<td><s:property name="password" value="#session.password"/></td>
 								</tr>
 								<tr>
 									<th>名前</th>
-									<td><s:property value="#session.userName"/></td>
+									<td><s:property name="userName"value="#session.userName"/></td>
+								</tr>
+								<tr>
+									<th>権限</th>
+									<td><s:property value="#session.adminFlg"/></td>
 								</tr>
 							</table>
 						</s:form>
@@ -94,9 +98,8 @@
 					</s:form>
 				</td>
 				<td>
-					<s:form action="UpdateUserDetailsAction">
+					<s:form action="GoUpdateUserDetailsAction">
 						<input type="hidden" name="updateFlg" value="1">
-						<s:param name="id" value="%{id}"/>
 						<s:submit value="更新" method="update"/>
 					</s:form>
 				</td>

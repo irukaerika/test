@@ -89,6 +89,20 @@
 									<s:property value="userName" escape="false"/>
 							</td>
 							</tr>
+					<tr id="box">
+							<td>
+									<label>管理者権限:</label>
+							</td>
+							<td>
+							<s:if test="adminFlg==true">
+								管理者
+							</s:if>
+							<s:else>
+								一般ユーザー
+							</s:else>
+							<s:hidden name="adminFlg" value="%{adminFlg}"/>
+							</td>
+							</tr>
 							<tr>
 									<td>
 										<s:submit value="完了"/>

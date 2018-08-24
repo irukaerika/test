@@ -1,60 +1,82 @@
 package com.internousdev.ecsite2.action;
+
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.ecsite2.dao.UserDetailsDAO;
+import com.internousdev.ecsite2.dto.UserDetailsDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UpdateUserDetailsAction extends ActionSupport implements SessionAware{
+	public Map<String, Object> session;
+	private UserDetailsDAO userDetailsDAO = new UserDetailsDAO();
+	private UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
+	private String updateFlg;
+	private String message;
+	private String errorMessage;
+	private String id;
 
-		private String loginId;
-		private String loginPassword;
-		private String userName;
-		public Map<String,Object> session;
-		//private String errorMassage;
 
-		public String execute(){
-			String result = SUCCESS;
-			if(!(loginId.equals(""))
-					&&!(loginPassword.equals(""))
-					&&!(userName.equals(""))){
-						session.put("loginId",loginId);
-						session.put("loginPassword",loginPassword);
-						session.put("userName",userName);
+	public String execute() throws SQLException{
 
-			} else{
-						setErrorMassage("未入力の項目があります。");
-						result = ERROR;
+		String result = ERROR;
+			 if(updateFlg.equals("1")){
+						update();
 			}
+			result = SUCCESS;
 			return result;
 		}
+			public UserDetailsDTO getUserDetailsDTO() {
+		return userDetailsDTO;
+	}
+			public void update() throws SQLException{
+				session.put("id", id);
+				int res = userDetailsDAO.updateUserDetails(session.get("id").toString());
 
-		public String getLoginId(){
-			return loginId;
-		}
-		public void setLoginId(String loginId){
-			this.loginId = loginId;
-		}
-		public String getLoginPassword(){
-			return loginPassword;
-		}
-		public void setLoginPassword(String loginPassword){
-			this.loginPassword = loginPassword;
-		}
-		public String getUserName(){
-			return userName;
-		}
-		public void setUserName(String userName){
-			this.userName = userName;
-		}
+				if(res > 0){
+					userDetailsDTO = null;
+					setMessage("更新しました。");
+				} else if(res == 0){
+					setMessage("更新に失敗しました。");
+				}
+
+			}
+
+				public void setUpdateFlg(String updateFlg) {
+					this.updateFlg = updateFlg;
+					}
+				public String getUpdateFlg(){
+					return updateFlg;
+				}
+				public String getErrorMessage() {
+					return errorMessage;
+				}
+				public void setErrorMessage(String errorMessage) {
+					this.errorMessage = errorMessage;
+				}
+				public String getMessage(){
+					return message;
+				}
+				public void setMessage(String message){
+					this.message = message;
+				}
 		@Override
-		public void setSession(Map<String,Object> session){
-			this.session = session;
-		}
-		public String getErrorMassage(){
-			return errorMassage;
-		}
-		public void setErrorMassage(String errorMassage){
-			this.errorMassage = errorMassage;
-		}
-}
+			public void setSession(Map<String, Object> session) {
+				this.session = session;
+			}
+			public Map<String, Object> getSession() {
+				return session;
+			}
+
+			public void setUserDetailsDTO(UserDetailsDTO userDetailsDTO) {
+				this.userDetailsDTO = userDetailsDTO;
+			}
+			public UserDetailsDAO getUserDetailsDAO() {
+				return userDetailsDAO;
+			}
+			public void setUserDetailsDAO(UserDetailsDAO userDetailsDAO) {
+				this.userDetailsDAO = userDetailsDAO;
+			}
+	}

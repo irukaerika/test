@@ -60,5 +60,27 @@ public class UserDetailsDAO {
 		return result;
 		}
 
+		public int updateUserDetails(String id)throws SQLException{
+
+			String sql = "update login_user_transaction set login_id=?, login_pass=?, user_name=? where id=?";
+
+
+			PreparedStatement preparedStatement;
+
+			int result = 0;
+		try{
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(4, id);
+
+			result = preparedStatement.executeUpdate();
+
+		} catch(SQLException e){
+			e.printStackTrace();
+		} finally{
+			connection.close();
+		}
+		return result;
+		}
+
 	}
 
