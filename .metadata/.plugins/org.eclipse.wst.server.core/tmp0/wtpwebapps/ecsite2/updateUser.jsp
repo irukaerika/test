@@ -66,44 +66,30 @@
 			<div id="top">
 				<h1>更新</h1>
 			</div>
-			<div>
+				<div>
 					<s:if test="message == null">
-						<s:form action="UserDetailsAction" >
-							<s:param name="id" value="%{id}"/>
-							<table border="1">
-								<tr>
-									<th>ユーザーID</th>
-									<td><s:textfield value="#session.loginId"/></td>
+						<s:form action="UpdateUserAction">
+
+							<table>
+							 	<tr>
+									<td>ID:</td>
+									<td><s:textfield name="id" value='%{#session.id}'/></td>
 								</tr>
 								<tr>
-									<th>パスワード</th>
-									<td><s:textfield value="#session.password"/></td>
+									<td>ユーザーID:</td>
+									<td><s:textfield name="userId" value='%{#session.userId}'/></td>
 								</tr>
 								<tr>
-									<th>名前</th>
-									<td><s:textfield value="#session.userName"/></td>
+									<td>パスワード:</td><td><s:textfield name="password" value='%{#session.password}'/></td>
+								</tr>
+								<tr>
+									<td>名前:</td><td><s:textfield name="userName" value='%{#session.userName}'/></td>
 								</tr>
 							</table>
+
+							<input type="hidden" name="updateFlg" value="1">
+							<s:submit value="更新" method="update"/>
 						</s:form>
-		<table>
-			<tr>
-			<!--
-				<td>
-					<s:form action="DeleteUserDetailsAction">
-						<input type="hidden" name="deleteFlg" value="1">
-						<s:submit value="削除" method="delete"/>
-					</s:form>
-				</td>
-			-->
-				<td>
-					<s:form action="UpdateUserDetailsAction">
-						<input type="hidden" name="updateFlg" value="1">
-						<s:param name="id" value="%{id}"/>
-						<s:submit value="更新" method="update"/>
-					</s:form>
-				</td>
-			</tr>
-		</table>
 					</s:if>
 
 		<s:elseif test="message != null">

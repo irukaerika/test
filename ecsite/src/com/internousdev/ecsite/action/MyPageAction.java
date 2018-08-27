@@ -21,9 +21,9 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		}
 
 		if(deleteFlg == null){
-			String item_transaction_id = session.get("id").toString();
-			String user_master_id = session.get("login_id").toString();
-			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
+			String buy_item_id = session.get("id").toString();
+			String buy_login_id = session.get("login_id").toString();
+			myPageList = myPageDAO.getMyPageUserInfo(buy_item_id, buy_login_id);
 		} else if(deleteFlg.equals("1")){
 					delete();
 		}
@@ -31,10 +31,10 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		return result;
 	}
 		public void delete() throws SQLException{
-			String item_transaction_id = session.get("id").toString();
-			String user_master_id = session.get("login_id").toString();
+			String buy_item_id = session.get("id").toString();
+			String buy_login_id = session.get("login_id").toString();
 
-			int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
+			int res = myPageDAO.buyItemHistoryDelete(buy_item_id, buy_login_id);
 
 			if(res > 0){
 				myPageList = null;

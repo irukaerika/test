@@ -25,7 +25,7 @@ public class UserDetailsAction extends ActionSupport implements SessionAware{
 		userDetailsDTO = userDetailsDAO.getItemDetailsInfo(id);
 
 		session.put("id", userDetailsDTO.getId());
-		session.put("loginId", userDetailsDTO.getLoginId());
+		session.put("userId", userDetailsDTO.getUserId());
 		session.put("password", userDetailsDTO.getPassword());
 		session.put("userName", userDetailsDTO.getUserName());
 

@@ -24,7 +24,7 @@ public class UserDetailsDAO {
 						ResultSet resultSet = preparedStatement.executeQuery();
 						while(resultSet.next()){
 							userDetailsDTO.setId(resultSet.getString("id"));
-							userDetailsDTO.setLoginId(resultSet.getString("login_id"));
+							userDetailsDTO.setUserId(resultSet.getString("login_id"));
 							userDetailsDTO.setPassword(resultSet.getString("login_pass"));
 							userDetailsDTO.setUserName(resultSet.getString("user_name"));
 						}
@@ -60,20 +60,28 @@ public class UserDetailsDAO {
 		return result;
 		}
 
-		public int updateUserDetails(String id)throws SQLException{
+		public int updateUserDetails(String userId, String password, String userName, String id)throws SQLException{
 
+/*
+			System.out.println(userId);
+			System.out.println(password);*/
 			String sql = "update login_user_transaction set login_id=?, login_pass=?, user_name=? where id=?";
 
 
-			PreparedStatement preparedStatement;
-
 			int result = 0;
 		try{
+			PreparedStatement preparedStatement;
 			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, userId);
+			preparedStatement.setString(2, password);
+			preparedStatement.setString(3, userName);
 			preparedStatement.setString(4, id);
 
 			result = preparedStatement.executeUpdate();
-
+/*
+			System.out.println(userId);
+			System.out.println(password);
+*/
 		} catch(SQLException e){
 			e.printStackTrace();
 		} finally{

@@ -68,7 +68,7 @@
 			</div>
 			<div>
 			<s:if test="message == null">
-			<s:form action="ItemDetailsAction" >
+
 			<s:param name="id" value="%{id}"/>
 					<table border="1">
 					<tr>
@@ -84,7 +84,7 @@
 						<td><s:property value="#session.itemStock"/><span>個</span></td>
 					</tr>
 					</table>
-			</s:form>
+
 
 		<table>
 			<tr>

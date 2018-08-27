@@ -68,27 +68,31 @@
 			</div>
 			<div>
 					<s:if test="message == null">
-						<s:form action="UserDetailsAction" >
+
 							<s:param name="id" value="%{id}"/>
 							<table border="1">
 								<tr>
+									<td>ID:</td>
+									<td><s:property value="#session.id"/></td>
+								</tr>
+								<tr>
 									<th>ユーザーID</th>
-									<td><s:property name="loginId" value="#session.loginId"/></td>
+									<td><s:property value="#session.userId"/></td>
 								</tr>
 								<tr>
 									<th>パスワード</th>
-									<td><s:property name="password" value="#session.password"/></td>
+									<td><s:property value="#session.password"/></td>
 								</tr>
 								<tr>
 									<th>名前</th>
-									<td><s:property name="userName"value="#session.userName"/></td>
+									<td><s:property value="#session.userName"/></td>
 								</tr>
 								<tr>
 									<th>権限</th>
 									<td><s:property value="#session.adminFlg"/></td>
 								</tr>
 							</table>
-						</s:form>
+
 		<table>
 			<tr>
 				<td>
@@ -98,9 +102,8 @@
 					</s:form>
 				</td>
 				<td>
-					<s:form action="GoUpdateUserDetailsAction">
-						<input type="hidden" name="updateFlg" value="1">
-						<s:submit value="更新" method="update"/>
+					<s:form action="GoEditUserAction">
+						<s:submit value="編集" method="edit"/>
 					</s:form>
 				</td>
 			</tr>

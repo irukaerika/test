@@ -48,10 +48,10 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		public void setUserName(String userName){
 			this.userName = userName;
 		}
-		public boolean getAdminFlg(){
+		public boolean isAdminFlg() {
 			return adminFlg;
 		}
-		public void setAdminFlg(boolean adminFlg){
+		public void setAdminFlg(boolean adminFlg) {
 			this.adminFlg = adminFlg;
 		}
 		@Override

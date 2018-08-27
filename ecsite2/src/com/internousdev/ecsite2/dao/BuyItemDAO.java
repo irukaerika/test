@@ -29,4 +29,7 @@ public class BuyItemDAO {
 		public BuyItemDTO getBuyItemDTO(){
 			return buyItemDTO;
 		}
+		public void setBuyItemDTO(BuyItemDTO buyItemDTO) {
+			this.buyItemDTO = buyItemDTO;
+		}
 }

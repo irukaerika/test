@@ -21,6 +21,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 						session.put("loginPassword",loginPassword);
 						session.put("userName",userName);
 						session.put("adminFlg", adminFlg);
+
 			} else{
 						setErrorMassage("未入力の項目があります。");
 						result = ERROR;
@@ -56,6 +57,9 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		public void setErrorMassage(String errorMassage){
 			this.errorMassage = errorMassage;
 		}
+		public Map<String, Object> getSession() {
+			return session;
+		}
 
 		public boolean getAdminFlg() {
 			return adminFlg;
@@ -63,10 +67,6 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 		public void setAdminFlg(boolean adminFlg) {
 			this.adminFlg = adminFlg;
-		}
-
-		public Map<String, Object> getSession() {
-			return session;
 		}
 
 }

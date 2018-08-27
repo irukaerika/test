@@ -12,7 +12,7 @@ use ecsite;
 	login_id varchar(16) unique,
 	login_pass varchar(16),
 	user_name varchar(50),
-	flg_num varchar(16) not null default '1',
+	flg_num varchar(16) not null default '0',
 	insert_date datetime,
 	update_date datetime
 	);
@@ -32,15 +32,15 @@ use ecsite;
 
 	create table user_buy_item_transaction(
 	id int not null primary key auto_increment,
-	item_transaction_id int,
+	buy_item_id int,
 	total_price int,
 	total_count int,
-	user_master_id varchar(16),
+	buy_login_id varchar(16),
 	pay varchar(30),
 	insert_date datetime,
 	update_date datetime
 	);
 
 INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("ノートBook",100,50);
-INSERT INTO login_user_transaction(login_id, login_pass, user_name, flg_num) VALUES("tsukazawa","tsukazawa","tsukazawa","0");
+INSERT INTO login_user_transaction(login_id, login_pass, user_name, flg_num) VALUES("tsukazawa","tsukazawa","tsukazawa","1");
 
