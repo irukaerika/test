@@ -15,7 +15,7 @@ public class UpdateUserAction extends ActionSupport implements SessionAware{
 	UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
 	private String updateFlg;
 	private String message;
-	private String errorMessage;
+
 	private String id;
 	private String userId;
 	private String password;
@@ -108,12 +108,6 @@ public class UpdateUserAction extends ActionSupport implements SessionAware{
 					}
 				public String getUpdateFlg(){
 					return updateFlg;
-				}
-				public String getErrorMessage() {
-					return errorMessage;
-				}
-				public void setErrorMessage(String errorMessage) {
-					this.errorMessage = errorMessage;
 				}
 				public String getMessage(){
 					return message;

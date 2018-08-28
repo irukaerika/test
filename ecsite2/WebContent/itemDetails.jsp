@@ -96,8 +96,8 @@
 				</td>
 
 				<td>
-					<s:form action="GoAddItemAction">
-						<s:submit value="更新" />
+					<s:form action="GoEditItemAction">
+						<s:submit value="編集" />
 					</s:form>
 				</td>
 			</tr>

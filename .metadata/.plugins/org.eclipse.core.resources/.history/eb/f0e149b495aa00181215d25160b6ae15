@@ -1,0 +1,22 @@
+package com.internousdev.sampleweb1.action;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.sampleweb1.dao.MCategoryDAO;
+import com.internousdev.sampleweb1.dao.ProductInfoDAO;
+import com.internousdev.sampleweb1.dto.MCategoryDTO;
+import com.internousdev.sampleweb1.dto.PaginationDTO;
+import com.internousdev.sampleweb1.dto.ProductInfoDTO;
+import com.internousdev.sampleweb1.util.InputChecker;
+import com.internousdev.sampleweb1.util.Pagination;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class SearchItemAction extends ActionSupport implements SessionAware{
+	private String categoryId;
+
+}
