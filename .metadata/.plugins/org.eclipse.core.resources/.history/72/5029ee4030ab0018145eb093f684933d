@@ -1,0 +1,27 @@
+package com.internousdev.sampleweb1.dto;
+import java.util.Date;
+
+public class CartInfoDTO {
+	private int id;
+	private String useId;
+	private String tempUserId;
+	private int productId;
+	private int productCount;
+	private int price;
+	private Date registDate;
+	private Date updateDate;
+
+	private String productName;
+	private String productNameKana;
+	private String productDescription;
+	private int categoryId;
+	private String imageFilePath;
+	private String imageFileName;
+	private Date releaseDate;
+	private String releaseCompany;
+	private String status;
+	private int subtotal;
+
+
+
+}
