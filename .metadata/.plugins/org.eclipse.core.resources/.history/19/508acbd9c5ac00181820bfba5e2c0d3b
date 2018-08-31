@@ -1,0 +1,32 @@
+package com.internousdev.sampleweb1.action;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.sampleweb1.dao.CartInfoDAO;
+import com.internousdev.sampleweb1.dao.McategoryDAO;
+import com.internousdev.sampleweb1.dto.CartInfoDTO;
+import com.internousdev.sampleweb1.dto.McategoryDTO;
+import com.opensymphony.xwork2.ActionSupport;
+public class CartAction extends ActionSupport implements SessionAware{
+	private String categoryId;
+	private String keywords;
+	private List<MCategoryDTO> mCategoryDTOList = new ArrayList<McategoryDTO>();
+	private Map<String, Object> session;
+	public String execute(){
+		String result = ERROR;
+		String userId = null;
+		CartInfoDAO cartInfoDao = new CartInfoDAO();
+		List<CartInfoDTO> cartInfoDtoList = new ArrayList<CartInfoDTO>();
+		if(session.containsKey("userId")){
+			userId = String.calueOf(session.get("userId"));
+		} else if (session.containsKey("tempUserId")){
+			userId = String .valueOf(session.get("tempUserId"));
+		}
+		cartInfoDtoList = cartInfoDao.getCartInfoDtoList(userId);
+	}
+}

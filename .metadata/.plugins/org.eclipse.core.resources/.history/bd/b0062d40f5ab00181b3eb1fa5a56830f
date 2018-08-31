@@ -1,0 +1,52 @@
+package com.internousdev.sampleweb1.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.SQLException;
+
+import com.internousdev.sampleweb1.dto.ProductInfoDTO;
+import com.internousdev.sampleweb1.util.DBConnector;
+
+public class ProductInfoDAO {
+	public List<ProductInfoDTO> getProductInfoList(){
+	DBConnector dbConnector = new DBConnector();
+	Connection con = dbConnector.getConnection();
+	List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
+	String sql = "select * from product_info";
+
+	try{
+		PreparedStatement ps = con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+		while(rs.next()){
+			ProductInfoDTO productInfoDto = new ProductInfoDTO();
+			productInfoDto.setId(rs.getInt("id"));
+			productInfoDto.setProductId(rs.getInt("product_id"));
+			productInfoDto.setProductName(rs.getString("product_name"));
+			productInfoDto.setProductNameKana(rs.getString("product_name_kana"));
+			productInfoDto.setProductDescription(rs.getString("product_description"));
+			productInfoDto.setCategoryId(rs.getInt("category_id"));
+			productInfoDto.setPrice(rs.getInt("price"));
+			productInfoDto.setImageFilePath(rs.getString("image_file_path"));
+			productInfoDto.setImageFileName(rs.getString("image_file_name"));
+			productInfoDto.setReleaseDate(rs.getDate("release_date"));
+			productInfoDto.setReleaseCompany(rs.getInt("release_company"));
+			productInfoDto.setStatus(rs.getInt("status"));
+			productInfoDto.setRegistDate(rs.getInt("regist_date"));
+			productInfoDto.setUpdateDate(rs.getInt("update_date"));
+			productInfoDtoList.add(productInfoDto);
+		}
+	}catch (SQLException e){
+		e.printStackTrace();
+	}try{
+		connection.close();
+	}catch (SQLException e){
+		e.printStackTrace();
+	}
+	return productInfoDtoList;
+}
+
+public ProductInfoDTO
+}

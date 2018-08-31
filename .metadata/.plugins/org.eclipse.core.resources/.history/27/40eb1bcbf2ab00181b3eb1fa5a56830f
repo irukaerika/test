@@ -1,0 +1,24 @@
+package com.internousdev.sampleweb1.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
+import java.sql.SQLException;
+
+import com.internousdev.sampleweb1.dto.ProductInfoDTO;
+import com.internousdev.sampleweb1.util.DBConnector;
+
+public class ProductInfoDAO {
+	DBConnector dbConnector = new DBConnector();
+	Connection con = dbConnector.getConnection();
+	List<ProductInfoDTO> productInfoDTOList = new ArrayList<ProductInfoDTO>();
+	String sql = "select * from product_info";
+
+	try{
+		PreparedStatement ps = connection.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+	}
+
+}

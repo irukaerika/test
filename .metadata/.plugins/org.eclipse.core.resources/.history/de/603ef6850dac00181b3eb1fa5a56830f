@@ -1,0 +1,37 @@
+package com.internousdev.sampleweb1.dao;
+
+import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Connection;
+
+import com.internousdev.sampleweb1.util.DBConnector;
+import com.internousdev.sampleweb1.dto.UserInfoDTO;
+
+public class UserInfoDAO {
+	public int createUser(String familyName, String firstName, String familyNameKana,
+			String firstNameKana, String sex, String email, String userId, String password){
+		DBConnector dbConnector = new DBConnector();
+		Connection con = dbConnector.getConnection();
+		int count =0;
+		String sql = "insert into user_info(user_id, password, family_name, first_name, "
+				+ "family_name_kana, first_name_kana, sex, email, status, userId, regist_date, "
+				+ "update_date) "
+				+ "values (?,?,?,?,?,?,?,?,?,?, now(), 0)";
+		try{
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			ps.setString(2, password);
+			ps.setString(3, familyName);
+			ps.setString(4, firstName);
+			ps.setString(5, familyNameKana);
+			ps.setString(6, firstNameKana);
+			ps.setString(7, sex);
+			ps.setString(8, email);
+			ps.setInt(9, 0);
+			ps.setInt(10, 1);
+
+		}
+	}
+
+}

@@ -7,6 +7,7 @@ public class UserInfoDTO {
 	private String userId;
 	private String password;
 	private String familyName;
+	private String firstName;
 	private String familyNameKana;
 	private String firstNameKana;
 	private int sex;
@@ -89,5 +90,10 @@ public class UserInfoDTO {
 	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
-
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 }
