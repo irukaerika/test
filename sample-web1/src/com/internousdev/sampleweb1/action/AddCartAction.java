@@ -14,7 +14,8 @@ import com.internousdev.sampleweb1.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddCartAction extends ActionSupport implements SessionAware{
-aaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaa
+
 	private int productId;
 	private String productName;
 	private String productNameKana;
