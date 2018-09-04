@@ -14,7 +14,7 @@ import com.internousdev.sampleweb1.util.CommonUtility;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AddCartAction extends ActionSupport implements SessionAware{
-
+aaaaaaaaaaaaaaa
 	private int productId;
 	private String productName;
 	private String productNameKana;
@@ -46,8 +46,8 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		}
 		productCount = String.valueOf((productCount.split(" ,",0))[0]);
 
-		CartInfoDAO cartInfoDAO = new CartInfoDAO();
-		int count = cartInfoDao.regist(userId, tempUserId, productCount, price);
+		CartInfoDAO cartInfoDao = new CartInfoDAO();
+		int count = cartInfoDao.regist(userId, tempUserId, productId,productCount, price);
 		if(count > 0){
 			result = SUCCESS;
 		}
