@@ -5,41 +5,42 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware{
 
-		private String loginId;
-		private String loginPassword;
+		private String userId;
+		private String password;
 		private String userName;
+		//管理者が使うとき
 		private boolean adminFlg;
 		public Map<String,Object> session;
-		private String errorMassage;
+		private String errorMessage;
 
 		public String execute(){
 			String result = SUCCESS;
-			if(!(loginId.equals(""))
-					&&!(loginPassword.equals(""))
+			if(!(userId.equals(""))
+					&&!(password.equals(""))
 					&&!(userName.equals(""))){
-						session.put("loginId",loginId);
-						session.put("loginPassword",loginPassword);
+						session.put("userId",userId);
+						session.put("password",password);
 						session.put("userName",userName);
 						session.put("adminFlg", adminFlg);
 
 			} else{
-						setErrorMassage("未入力の項目があります。");
+						setErrorMessage("未入力の項目があります。");
 						result = ERROR;
 			}
 			return result;
 		}
 
-		public String getLoginId(){
-			return loginId;
+		public String getUserId(){
+			return userId;
 		}
-		public void setLoginId(String loginId){
-			this.loginId = loginId;
+		public void setUserId(String userId){
+			this.userId = userId;
 		}
-		public String getLoginPassword(){
-			return loginPassword;
+		public String getPassword(){
+			return password;
 		}
-		public void setLoginPassword(String loginPassword){
-			this.loginPassword = loginPassword;
+		public void setPassword(String password){
+			this.password = password;
 		}
 		public String getUserName(){
 			return userName;
@@ -51,11 +52,11 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		public void setSession(Map<String,Object> session){
 			this.session = session;
 		}
-		public String getErrorMassage(){
-			return errorMassage;
+		public String getErrorMessage(){
+			return errorMessage;
 		}
-		public void setErrorMassage(String errorMassage){
-			this.errorMassage = errorMassage;
+		public void setErrorMessage(String errorMessage){
+			this.errorMessage = errorMessage;
 		}
 		public Map<String, Object> getSession() {
 			return session;

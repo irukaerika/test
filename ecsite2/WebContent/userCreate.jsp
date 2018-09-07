@@ -61,8 +61,8 @@
 			<p>UserCreate</p>
 		</div>
 		<div>
-			<s:if test="errorMassage != ''">
-					<s:property value="errorMassage" escape="false" />
+			<s:if test="errorMessage != ''">
+					<s:property value="errorMessage" escape="false" />
 
 			</s:if>
 			<table>
@@ -72,7 +72,7 @@
 				<label>ログインID:</label>
 			</td>
 			<td>
-				<input type="text" name="loginId" value="" />
+				<input type="text" name="userId" value="" />
 			</td>
 		</tr>
 		<tr>
@@ -80,7 +80,7 @@
 				<label>ログインPASS:</label>
 			</td>
 			<td>
-				<input type="text" name="loginPassword" value="" />
+				<input type="text" name="password" value="" />
 			</td>
 		</tr>
 		<tr>
