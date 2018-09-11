@@ -1,7 +1,7 @@
-@charset "UTF-8";
+/*  @charset "UTF-8";
 body, html {
-	margin : 0; /* ä½™ç™½ã®å‰Šé™¤ */
-	padding : 0; /* ä½™ç™½ã®å‰Šé™¤ */
+	margin : 0; —]”’‚Ìíœ
+	padding : 0; —]”’‚Ìíœ
 	width : 100%;
 	height : 100%;
 }
@@ -114,7 +114,7 @@ margin-left : -30px;
 	height : auto;
 	padding-bottom : 10px;
 	margin-bottom : 100px;
-	overflow : auto; /* ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã®è¡¨ç¤ºã‚’è‡ªå‹•ã«è¨­å®šï¼ˆã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ï¼‰*/
+	overflow : auto; ƒRƒ“ƒeƒ“ƒc‚Ì•\¦‚ğ©“®‚Éİ’èiƒXƒNƒ[ƒ‹j
 }
 
 .contents-btn-set {
@@ -125,20 +125,20 @@ margin-left : -30px;
 
 h1 {
 	width : 	90%;
-	color: #364e96;/*æ–‡å­—è‰²*/
+	color: #364e96;•¶šF
 	margin-left : 3%;
 	margin-right : 3%;
-	padding: 0.5em 0;/*ä¸Šä¸‹ã®ä½™ç™½*/
-	border-top: solid 3px #364e96;/*ä¸Šç·š*/
-	border-bottom: solid 3px #364e96;/*ä¸‹ç·š*/
+	padding: 0.5em 0;ã‰º‚Ì—]”’
+	border-top: solid 3px #364e96;ãü
+	border-bottom: solid 3px #364e96;‰ºü
 }
 
 h2 {
 	width : 	90%;
-	color: #5e5e5e;/*æ–‡å­—è‰²*/
+	color: #5e5e5e;•¶šF
 	margin-left : 3%;
 	margin-right : 3%;
-	padding: 0.5em 0;/*ä¸Šä¸‹ã®ä½™ç™½*/
+	padding: 0.5em 0;ã‰º‚Ì—]”’
 }
 
 .pager{
@@ -272,25 +272,25 @@ table.vertical-list-table-mini td {
 	border-bottom: 1px solid #ccc;
 }
 
-/* å•†å“ä¸€è¦§ã‚¨ãƒªã‚¢ã®èƒŒæ™¯ */
+¤•iˆê——ƒGƒŠƒA‚Ì”wŒi
 #product-list {
 	background : #cccccc;
 }
 
-/* ã‚¯ãƒªã‚¢ãƒ•ã‚£ãƒƒã‚¯ã‚¹ */
+ƒNƒŠƒAƒtƒBƒbƒNƒX
 #item-list ul::after {
 	content : "";
 	clear : both;
 	display : block;
 }
-/* å•†å“ä¸€è¦§ãƒªã‚¹ãƒˆã®è¨­å®š */
+¤•iˆê——ƒŠƒXƒg‚Ìİ’è
 #product-list ul li {
 	display : block;
 	float : left;
 	width : 85%;
 	height : 100%;
 	list-style-type : none;
-/*	background : #00cccc; */
+	background : #00cccc;
 	text-align : center;
 }
 #footer {
@@ -326,7 +326,7 @@ table.vertical-list-table-mini td {
 	list-style : none;
 }
 
-.product-details-recomï½end-box {
+.product-details-recom‚end-box {
 	margin-top: 2%;
 	clear: both;
 	margin-left : 200px;
@@ -491,3 +491,60 @@ table.vertical-list-table-mini td {
 .error-message {
 	color : red;
 }
+ */
+
+ .product-list-box {
+display:inline-block;
+float : left;
+width:33.3%;
+height: 300px;
+text-align:center;
+}
+
+.item-image-box-200 {
+    width: 200px;
+    height: 200px;
+}
+
+<a href="/sample-web/SearchItemAction.action?pageNo=1&amp;categoryId=1 ">1</a>
+
+.pager{
+padding-top : 50px;
+text-align : center;
+font-size : 18px;
+clear : both;
+}
+
+#contents {
+	padding-top : 70px;
+	margin-top : 50px;
+	margin : 0 auto;
+	width : 100%;
+	height : auto;
+	padding-bottom : 10px;
+	margin-bottom : 100px;
+	overflow : auto; /* ƒRƒ“ƒeƒ“ƒc‚Ì•\¦‚ğ©“®‚Éİ’èiƒXƒNƒ[ƒ‹j*/
+}
+
+h1 { width : 90%;
+color: #364e96;/*•¶šF*/
+margin-left : 3%;
+margin-right : 3%;
+padding: 0.5em 0;/*ã‰º‚Ì—]”’*/
+border-top: solid 3px #364e96;/*ãü*/
+border-bottom: solid 3px #364e96;/*‰ºü*/
+animation-name:fadeIn;
+animation-duration:3s;
+animation-timing-function:liner;
+
+}
+
+@keyframes fadeIn{
+	0%{
+	opacity:0;
+	}
+	100%{
+	opacity:1;
+	}
+}
+

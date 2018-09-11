@@ -3,17 +3,37 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<meta charaset="UTF-8">
 <title>ホーム</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+  <script>
+    $(document).ready(function(){
+      $('.abc').bxSlider({
+    auto:true,
+          mode:'horizontal',
+          speed:2000,
+          slideWidth:900
+
+      });
+    });
+  </script>
 </head>
 <body>
 <jsp:include page="header.jsp" />
-<div id="contents">
-<h1>ホーム画面</h1>
-</div>
+      <div class="abc">
+          <img src="pic3.jpg">
+          <img src="pic4.jpg">
+          <img src="pic2.jpg">
+      </div>
+
 <s:include value="footer.jsp"/>
-</body>
+
+    </body>
 </html>
