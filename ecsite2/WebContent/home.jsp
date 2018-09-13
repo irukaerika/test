@@ -53,6 +53,12 @@
 			display:inline-block;
 			text-align:center;
 		}
+		#text-center{
+		cursor:pointer;
+		}
+		#footer{
+		cursor:url(https://media5.picsearch.com/is?a10k61D72LmJ6pnrfU2Soi2nzraSoXmBbR9ReKBK7E8&height=341);
+		}
 	</style>
 </head>
 <body>
@@ -64,7 +70,7 @@
 		</div>
 		<div id="text-center">
 			<s:form action="HomeAction">
-				<s:submit value="商品購入"/>
+				<div id="submit"><s:submit value="商品購入"/></div>
 			</s:form>
 			<s:if test="#session.id != null">
 				<p>ログアウトする場合は
