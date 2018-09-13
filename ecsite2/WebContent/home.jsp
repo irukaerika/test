@@ -57,7 +57,7 @@
 		cursor:pointer;
 		}
 		#footer{
-		cursor:url(https://media5.picsearch.com/is?a10k61D72LmJ6pnrfU2Soi2nzraSoXmBbR9ReKBK7E8&height=341);
+		cursor:url(./images/is.jpg),pointer;
 		}
 	</style>
 </head>
