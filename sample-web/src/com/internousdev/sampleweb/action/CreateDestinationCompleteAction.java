@@ -15,6 +15,8 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 	private String familyNameKana;
 	private String firstNameKana;
 	private String sex;
+	private String loginId;
+
 	private List<String> sexList = new ArrayList<String>();
 	private String email;
 	private String telNumber;
@@ -31,6 +33,13 @@ public class CreateDestinationCompleteAction extends ActionSupport implements Se
 		return result;
 	}
 
+
+	public String getLoginId() {
+		return loginId;
+	}
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
 	public String getSex() {
 		return sex;
 	}

@@ -8,8 +8,8 @@ import com.internousdev.ecsite2.dto.LoginDTO;
 
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware{
 
-		private String loginId;
-		private String loginPassword;
+		private String userId;
+		private String password;
 		private String userName;
 		private boolean adminFlg;
 		public Map<String, Object> session;
@@ -17,8 +17,8 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		private LoginDTO loginDTO = new LoginDTO();
 
 		public String execute() throws SQLException{
-			userCreateCompleteDAO.createUser(session.get("loginId").toString(),
-							session.get("loginPassword").toString(),
+			userCreateCompleteDAO.createUser(session.get("userId").toString(),
+							session.get("password").toString(),
 							session.get("userName").toString(),adminFlg);
 
 			String result = SUCCESS;
@@ -30,17 +30,27 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		public void setLoginDTO(LoginDTO loginDTO){
 			this.loginDTO = loginDTO;
 		}
-		public String getLoginId(){
-			return loginId;
+
+		public String getUserId() {
+			return userId;
 		}
-		public void setLoginId(String loginId){
-			this.loginId = loginId;
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
-		public String getLoginPassword(){
-			return loginPassword;
+		public String getPassword() {
+			return password;
 		}
-		public void setLoginPassword(String loginPassword){
-			this.loginPassword = loginPassword;
+		public void setPassword(String password) {
+			this.password = password;
+		}
+		public UserCreateCompleteDAO getUserCreateCompleteDAO() {
+			return userCreateCompleteDAO;
+		}
+		public void setUserCreateCompleteDAO(UserCreateCompleteDAO userCreateCompleteDAO) {
+			this.userCreateCompleteDAO = userCreateCompleteDAO;
+		}
+		public Map<String, Object> getSession() {
+			return session;
 		}
 		public String getUserName(){
 			return userName;

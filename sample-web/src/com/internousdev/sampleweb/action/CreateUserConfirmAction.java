@@ -130,14 +130,6 @@ public class CreateUserConfirmAction extends ActionSupport implements SessionAwa
 		this.sex = sex;
 	}
 
-//	public List<String> getSexList() {
-//		return sexList;
-//	}
-//
-//	public void setSexList(List<String> sexList) {
-//		this.sexList = sexList;
-//	}
-
 	public String getEmail() {
 		return email;
 	}

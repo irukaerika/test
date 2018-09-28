@@ -70,7 +70,7 @@
 									<label>ログインID:</label>
 							</td>
 							<td>
-									<s:property value=#session.loginId  escape="false"/>
+									<s:property value="#session.userId"  escape="false"/>
 							</td>
 					</tr>
 					<tr id="box">
@@ -78,7 +78,7 @@
 									<label>ログインPASS:</label>
 							</td>
 							<td>
-									<s:property value=#session.loginPassword escape="false"/>
+									<s:property value="#session.password" escape="false"/>
 							</td>
 					</tr>
 					<tr id="box">
@@ -86,7 +86,7 @@
 									<label>ユーザー名:</label>
 							</td>
 							<td>
-									<s:property value=#session.userName escape="false"/>
+									<s:property value="#session.userName" escape="false"/>
 							</td>
 							</tr>
 					<tr id="box">
